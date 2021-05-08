@@ -6,19 +6,19 @@ import React, { useState } from 'react';
 
 function App() {
   // const [data, setData] = useState('str')
-  const [input, setInput] = useState('')
+  // const [input, setInput] = useState('')
   const [guestList, setGuestList] = useState(['none'])
 
 
   function handleScan(data) {
     console.log('DT', data)
-    setInput(data)
+    // setInput(data)
     if (data) {
       if (!guestList.includes(data)) {
-        alert('Checking In . . .')
-        save()
+        alert(`Checking ${data} in. Please wait . . .`)
+        save(data)
       } else {
-        alert('Already in guest list')
+        alert(`${data} is already in guest list`)
       }
     }
   }
@@ -26,17 +26,17 @@ function App() {
     console.error(err)
   }
 
-  function save() {
-    let sessionList = sessionStorage.getItem('guestList')
-    if (sessionList) {
-      sessionList = JSON.parse(sessionList)
-    } else {
-      sessionList = []
-    }
-    sessionList.push(input)
-    sessionStorage.setItem('guestList', JSON.stringify(sessionList))
+  function save(data) {
+    // let sessionList = sessionStorage.getItem('guestList')
+    // if (sessionList) {
+    //   sessionList = JSON.parse(sessionList)
+    // } else {
+    //   sessionList = []
+    // }
+    // sessionList.push(data)
+    // sessionStorage.setItem('guestList', JSON.stringify(sessionList))
 
-    const newList = guestList.concat([input])
+    const newList = [...guestList,data]
     setGuestList(newList)
   }
 
