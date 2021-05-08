@@ -14,8 +14,8 @@ function App() {
     console.log('DT', data)
     setInput(data)
     if (data) {
-      if (guestList.find(el => el === data) < 0) {
-        alert('Checked In')
+      if (!guestList.includes(data)) {
+        alert('Checking In . . .')
         save()
       } else {
         alert('Already in guest list')
