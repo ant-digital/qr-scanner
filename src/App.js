@@ -49,7 +49,7 @@ function App() {
 
         <h1>Scanner</h1>
         <QrReader
-          delay={200}
+          // delay={200}
           style={{
             height: 240,
             width: 320,
