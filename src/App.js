@@ -6,13 +6,13 @@ import React, { useState } from 'react';
 
 function App() {
   // const [data, setData] = useState('str')
-  // const [input, setInput] = useState('')
+  const [input, setInput] = useState('')
   const [guestList, setGuestList] = useState(['none'])
 
 
   function handleScan(data) {
     console.log('DT', data)
-    // setInput(data)
+    setInput(data)
     if (data) {
       if (!guestList.includes(data)) {
         alert(`Checking ${data} in. Please wait . . .`)
