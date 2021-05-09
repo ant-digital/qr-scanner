@@ -50,6 +50,7 @@ function App() {
         <h1>Scanner</h1>
         <QrReader
           // delay={200}
+          facingMode={'rear'}
           style={{
             height: 240,
             width: 320,
